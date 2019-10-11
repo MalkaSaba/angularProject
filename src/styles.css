@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{ 
+    padding: 20px; /* This will move the button from sticking to the side of the webpage*/
+}
+
+.btn-space {
+    margin-right: 5px;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border:2px solid red;
+}

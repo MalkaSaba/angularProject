@@ -1,0 +1,19 @@
+<form #f = "ngForm">
+    <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input ngModel #firstName="ngModel" required minlength="4" maxlength="10" name="firstname"  id="firstName" type="text" class="form-control" (keyup.enter)="log(firstName)"/>
+        <div class="alert alert-danger" *ngIf="!firstName.valid && firstName.touched">
+            <div *ngIf = "firstName.errors.required">Firstname required</div>
+    
+            <div *ngIf = "firstName.errors.minlength">Firstname should be minimum 4 characters</div>
+            <div *ngIf = "firstName.errors.maxlength">Firstname should be maximum 10 characters </div>
+        </div>
+    
+    </div>
+
+    <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea id="comments" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-primary"[disabled]="!f.valid">Submit</button>
+</form>

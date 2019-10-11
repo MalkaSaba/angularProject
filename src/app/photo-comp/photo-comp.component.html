@@ -1,0 +1,12 @@
+<input type="text" class="form-control" (keyup.enter)="createPhoto(title)" #title>
+
+
+<ul class = "list-group">
+  <li *ngFor="let photo of photos" class = "list-group-item"> 
+    <button class="btn btn-default btn-sm" (click) = "updatePhoto(photo)">Update</button>
+    <button class="btn btn-default btn-sm" (click) = "deletePhoto(photo)">Delete</button>
+    {{photo.title}}
+    <img src={{photo.thumbnailUrl}} alt="this is an image">
+  </li>
+
+</ul>
